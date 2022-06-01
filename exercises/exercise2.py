@@ -1,8 +1,6 @@
 """Variables de Clase y Métodos de Clase."""
 
-
-class Article:
-    """Todos los artículos tienen un nombre y un costo, opcionalmente algunos
+"""Todos los artículos tienen un nombre y un costo, opcionalmente algunos
     tienen un porcentaje de descuento.
 
     El IVA es un impuesto que se aplica a todos los productos por igual,
@@ -19,7 +17,15 @@ class Article:
         - No utilizar Dataclasses
         - No utilizar Properties
         - Utilizar Type Hints en todos los métodos y variables
-    """
+"""
+class Article:
+    nombre="auto"
+    costo=10
+    iva=0,21
+    
+    def calcularPrecio(self):
+        self.precio = 
+
 
 
 # NO MODIFICAR - INICIO

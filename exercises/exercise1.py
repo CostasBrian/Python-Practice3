@@ -1,10 +1,8 @@
 """Variables de Instancia y Métodos de instancia."""
 
-from math import pi
+from math import pi 
 
-
-class Circle:
-    """Todo cículo tiene un radio y se desea conocer tanto el área como el
+"""Todo cículo tiene un radio y se desea conocer tanto el área como el
     perímetro (longitud de circunferencia).
 
     Reportar los números redondeados a dos decimales
@@ -16,7 +14,27 @@ class Circle:
         - No utilizar Dataclasses
         - No utilizar Properties
         - Utilizar Type Hints en todos los métodos y variables
-    """
+"""
+print("--------------------------Aca empieza el codigo--------------------------------")
+
+class Circle():
+    areaCirculo = 0
+    perimetroCirculo = 0
+    radio=1
+    
+    def area(self):
+        self.areaCirculo = 3.14 * self.radio
+        return self.areaCirculo
+        
+    def perimetro(self):
+        self.perimetroCirculo = 2 * 3.14 * self.radio
+        return self.perimetroCirculo
+    
+circulo=Circle()
+
+print(circulo.radio)
+print(circulo.area())
+print(circulo.perimetro())
 
 
 # NO MODIFICAR - INICIO
