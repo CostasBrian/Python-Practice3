@@ -22,6 +22,31 @@ Restricciones:
     - No utilizar properties
     - Utilizar Type Hints en todos los métodos y variables
 """
+print("--------------------------Aca empieza el codigo--------------------------------")
+
+@dataclass
+class Materia():
+    def __init__(self, nombre) -> None:
+        self.nombre = nombre
+        
+    def __repr__(self) -> str:
+        return f"Materia('{self.nombre}')"
+    
+    def __str__(self) -> str:
+        return self.nombre
+    
+    
+@dataclass  
+class Carrera():
+    def __init__(self, [materias]) -> None:
+        self.[materias] = materias
+        
+    def __repr__(self) -> str:
+        return f"Carrera({[mat for mat in self.materias]})"
+    
+    def __str__(self) -> str:
+        return str([str(i) for i in self.materias])
+        
 
 
 # NO MODIFICAR - INICIO
@@ -47,8 +72,7 @@ assert estadistica.nombre == "Estadística"
 
 ciclo_basico = Carrera([matematica, estadistica])
 assert (
-    str(ciclo_basico)
-    == "Carrera(materias=[Materia(nombre='Matemática'), Materia(nombre='Estadística')])"  # noqa: 501
+    str(ciclo_basico) == "Carrera(materias=[Materia(nombre='Matemática'), Materia(nombre='Estadística')])"  # noqa: 501
 )
 
 assert len(ciclo_basico) == 2
