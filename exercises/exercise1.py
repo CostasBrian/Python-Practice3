@@ -18,9 +18,10 @@ from math import pi
 print("--------------------------Aca empieza el codigo--------------------------------")
 
 class Circle():
-    areaCirculo = 0
-    perimetroCirculo = 0
-    radio=1
+    def __init__(self, radio) -> None:
+        self.areaCirculo = 0
+        self.perimetroCirculo = 0
+        self.radio=1
     
     def area(self):
         self.areaCirculo = 3.14 * self.radio
@@ -30,11 +31,8 @@ class Circle():
         self.perimetroCirculo = 2 * 3.14 * self.radio
         return self.perimetroCirculo
     
-circulo=Circle()
+"""circulo=Circle(1)"""
 
-print(circulo.radio)
-print(circulo.area())
-print(circulo.perimetro())
 
 
 # NO MODIFICAR - INICIO

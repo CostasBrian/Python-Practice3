@@ -1,8 +1,6 @@
 """Properties"""
 
-
-class Article:
-    """Re-Escribir el ejercicio anterior utilizando una property en vez de un
+"""Re-Escribir el ejercicio anterior utilizando una property en vez de un
     método de instancia.
 
     Restricciones:
@@ -13,7 +11,28 @@ class Article:
         - No utilizar métodos de instancia
         - No utilizar Dataclasses
         - Utilizar Type Hints en todos los métodos y variables
-    """
+"""
+print("--------------------------Aca empieza el codigo--------------------------------")
+
+class Article:
+    iva = 0.21
+    def __init__(self, nombre, costo, descuento) -> None:
+        self.nombre = nombre
+        self.costo = costo
+        self.descuento = descuento
+        
+    @property
+    def calcular_costo(self):
+        return self.costo + self.iva - self.descuento
+    
+    @calcular_costo.setter
+    def guardarCosto(self, value):
+        self.costo = value
+    
+    @classmethod
+    def actualizar_iva(cls, new_value):
+        cls.iva = new_value
+        return cls.iva
 
 
 # NO MODIFICAR - INICIO

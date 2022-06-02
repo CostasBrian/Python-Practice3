@@ -10,21 +10,32 @@
     los descuentos si hubiera. Redondear a 2 decimales.
 
     Restricciones:
-        - Utilizar 3 variables de instancia
-        - Utilizar 1 método de instancia
-        - Utilizar 1 variable de clase
-        - Utilizar 1 método de clase
+        - Utilizar 3 variables de instancia --propiedades de la clase--
+        - Utilizar 1 método de instancia --crear objeto--
+        - Utilizar 1 variable de clase 
+        - Utilizar 1 método de clase 
         - No utilizar Dataclasses
         - No utilizar Properties
         - Utilizar Type Hints en todos los métodos y variables
 """
+from math import degrees
+
+print("--------------------------Aca empieza el codigo--------------------------------")
+
 class Article:
-    nombre="auto"
-    costo=10
-    iva=0,21
+    iva = 0.21
+    def __init__(self, nombre, costo, descuento) -> None:
+        self.nombre = nombre
+        self.costo = costo
+        self.descuento = descuento
     
-    def calcularPrecio(self):
-        self.precio = 
+    def calcular_precio(self):
+        return self.costo + self.iva - self.descuento
+    
+    @classmethod
+    def actualizar_iva(cls, new_value):
+        cls.iva = new_value
+        return cls.iva
 
 
 
