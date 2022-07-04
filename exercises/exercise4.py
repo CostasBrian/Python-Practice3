@@ -26,27 +26,16 @@ print("--------------------------Aca empieza el codigo--------------------------
 
 @dataclass
 class Materia():
-    def __init__(self, nombre) -> None:
-        self.nombre = nombre
-        
-    def __repr__(self) -> str:
-        return f"Materia('{self.nombre}')"
-    
-    def __str__(self) -> str:
-        return self.nombre
-    
+    nombre : str
     
 @dataclass  
 class Carrera():
-    def __init__(self, [materias]) -> None:
-        self.[materias] = materias
+    longitud : list
         
     def __repr__(self) -> str:
-        return f"Carrera({[mat for mat in self.materias]})"
+        return f"Carrera(materias={self.longitud})"
     
-    def __str__(self) -> str:
-        return str([str(i) for i in self.materias])
-        
+   
 
 
 # NO MODIFICAR - INICIO

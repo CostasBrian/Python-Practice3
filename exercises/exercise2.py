@@ -24,18 +24,23 @@ print("--------------------------Aca empieza el codigo--------------------------
 
 class Article:
     iva = 0.21
-    def __init__(self, nombre, costo, descuento) -> None:
+    def __init__(self, nombre, costo, descuento=0) -> None:
         self.nombre = nombre
         self.costo = costo
         self.descuento = descuento
     
     def calcular_precio(self):
-        return self.costo + self.iva - self.descuento
+        precio_mas_iva = round((self.costo + self.costo * self.iva), 2)
+        final_descuento = precio_mas_iva * self.descuento
+        precio_final = round((precio_mas_iva - final_descuento), 2)
+        return precio_final
+        
+    
     
     @classmethod
     def actualizar_iva(cls, new_value):
         cls.iva = new_value
-        return cls.iva
+        
 
 
 
@@ -76,6 +81,7 @@ assert article.calcular_precio() == 1.21
 
 article = Article(costo=1, nombre="Auto", descuento=0.21)
 assert article.nombre == "Auto"
+
 assert article.calcular_precio() == 0.96
 
 

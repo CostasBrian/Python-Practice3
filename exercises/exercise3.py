@@ -16,18 +16,17 @@ print("--------------------------Aca empieza el codigo--------------------------
 
 class Article:
     iva = 0.21
-    def __init__(self, nombre, costo, descuento) -> None:
+    def __init__(self, nombre, costo, descuento=0) -> None:
         self.nombre = nombre
         self.costo = costo
         self.descuento = descuento
         
     @property
-    def calcular_costo(self):
-        return self.costo + self.iva - self.descuento
-    
-    @calcular_costo.setter
-    def guardarCosto(self, value):
-        self.costo = value
+    def precio(self):
+        precio_mas_iva = round((self.costo + self.costo * self.iva), 2)
+        final_descuento = precio_mas_iva * self.descuento
+        precio_final = round((precio_mas_iva - final_descuento), 2)
+        return precio_final
     
     @classmethod
     def actualizar_iva(cls, new_value):
